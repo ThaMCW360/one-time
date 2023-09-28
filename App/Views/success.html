@@ -1,0 +1,30 @@
+<?php
+use Core\Functions;
+
+?>
+<main>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="box col-lg-8">
+            <h1 class="text-center">Witamy na
+                <?php echo @$title ?>
+            </h1>
+            <h2>
+                <?php echo $message['title'] ?>
+            </h2>
+            <br>
+            <p>
+                <?php echo $message['content'] ?>
+            </p>
+            <br>
+            Twój prywatny link do zarządzania wiadomością:<a href="<?php echo Functions::getBaseUrl()."/".$message['code'].'/'.$message['admin_code'] ?>">
+                <?php echo Functions::getBaseUrl()."/".$message['code'].'/'.$message['admin_code'] ?></a> (Zapisz sobie go gdzieś)
+            <br>
+            Link do tej wiadomości: <a href="<?php echo Functions::getBaseUrl()."/".$message['code'] ?>">
+                <?php echo Functions::getBaseUrl()."/".$message['code'] ?></a>
+            <br>
+            Wyświetlono:
+            <?php echo $message['views'] ?> razy
+        </div>
+    </div>
+</main>
